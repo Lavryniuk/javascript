@@ -44,28 +44,28 @@
 
 // console.log(personalMovieDB);
 
-console.log( NaN || 2 || undefined ); //2
+// console.log( NaN || 2 || undefined ); //2
 
 
-console.log( NaN && 2 && undefined ); //nan
+// console.log( NaN && 2 && undefined ); //nan
 
 
-console.log( 1 && 2 && 3 ); //3
+// console.log( 1 && 2 && 3 ); //3
 
 
-console.log( !1 && 2 || !3 ); //false
+// console.log( !1 && 2 || !3 ); //false
 
 
-console.log( 25 || null && !3 ); //25
+// console.log( 25 || null && !3 ); //25
 
 
-console.log( NaN || null || !3 || undefined || 5); //5
+// console.log( NaN || null || !3 || undefined || 5); //5
 
 
-console.log( NaN || null && !3 && undefined || 5); //5
+// console.log( NaN || null && !3 && undefined || 5); //5
 
 
-console.log( 5 === 5 && 3 > 1 || 5); //true
+// console.log( 5 === 5 && 3 > 1 || 5); //true
 
 
 // const hamburger = 3;
@@ -89,14 +89,114 @@ console.log( 5 === 5 && 3 > 1 || 5); //true
 //    console.log('Done!')
 // }
 
-let hamburger;
-const fries = NaN;
-const cola = 0;
-const nuggets = 2;
+// let hamburger;
+// const fries = NaN;
+// const cola = 0;
+// const nuggets = 2;
 
 
-if (hamburger && cola || fries === 3 && nuggets) {
-   console.log('Done!')
-}
+// if (hamburger && cola || fries === 3 && nuggets) {
+//    console.log('Done!')
+// }
 
-console.log(hamburger && cola || fries === 3 && nuggets);
+// console.log(hamburger && cola || fries === 3 && nuggets);
+
+
+// for (let i = 0; i < 3; i++) {
+// 	console.log(i);
+// 	for (let j = 0; j < 3; j++) {
+// 		console.log(j);
+// 	}
+// }
+
+//make a triangle
+
+// let result = '';
+// const length = 7;
+
+// for (let i = 1; i < length; i++) {
+
+// 	for (let j = 0; j < i; j++) {
+	
+// 		result += '*';
+// 	}
+
+// 	result += '\n';
+// }
+
+// console.log(result);
+
+
+// // Место для первой задачи
+// function firstTask() {
+//     // Пишем решение вот тут
+//     for (let i = 5; i <=10; i++) {
+// 		console.log(i);
+// 	}
+    
+// }
+
+// // Место для второй задачи
+// function secondTask() {
+//     // Пишем решение вот тут
+//     for (let i = 20; i >=10; i--) {
+// 		if (i === 13) {
+// 			break;
+// 		}
+// 		console.log(i);
+// 	}
+    
+// }
+
+// // Место для третьей задачи
+// function thirdTask() {
+//     // Пишем решение вот тут
+//     for ( let i = 2; i <= 10; i++) {
+// 		if (i % 2 === 0) {
+// 			console.log(i);
+// 		}
+// 	}
+    
+// }
+
+// // Место для четвертой задачи
+
+// // Цикл, который нужно переписать:
+
+// // for (let i = 2; i <= 16; i++) {
+// //     if (i % 2 === 0) {
+// //         continue;
+// //     } else {
+// //         console.log(i);
+// //     }
+// // }
+
+// function fourthTask() {
+//     // Пишем решение вот тут
+    
+// 	let i = 2;
+// 	while (i <= 16) {
+// 		if (i % 2 !== 0) {
+// 			console.log(i);
+// 		}
+// 		i++;
+// 	}
+
+    
+// }
+
+// // Место для пятой задачи
+
+// function fifthTask() {
+//     const arrayOfNumbers = [];
+
+//     // Пишем решение вот тут
+    
+//     for (let i = 5; i <= 10; i++) {
+// 		arrayOfNumbers[arrayOfNumbers.length] = i;
+// 	}
+// 	console.log(arrayOfNumbers);
+
+//     // Не трогаем
+//     return arrayOfNumbers;
+// }
