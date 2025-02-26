@@ -21,7 +21,7 @@
 
 Проверить, чтобы все работало без ошибок в консоли */
 
-'use strict';
+// 'use strict';
 
 // const numberOfFilms = +prompt('How many movies did you already watch?', '');
 
@@ -44,344 +44,117 @@
 
 // console.log(personalMovieDB);
 
-// console.log( NaN || 2 || undefined ); //2
+
+/* Задание на урок:
+
+1) Автоматизировать вопросы пользователю про фильмы при помощи цикла
+
+2) Сделать так, чтобы пользователь не мог оставить ответ в виде пустой строки,
+отменить ответ или ввести название фильма длинее, чем 50 символов. Если это происходит - 
+возвращаем пользователя к вопросам опять
+
+3) При помощи условий проверить  personalMovieDB.count, и если он меньше 10 - вывести сообщение
+"Просмотрено довольно мало фильмов", если от 10 до 30 - "Вы классический зритель", а если больше - 
+"Вы киноман". А если не подошло ни к одному варианту - "Произошла ошибка"
+
+4) Потренироваться и переписать цикл еще двумя способами*/
+
+'use strict';
+
+// Код возьмите из предыдущего домашнего задания
 
 
-// console.log( NaN && 2 && undefined ); //nan
+const numberOfFilms = +prompt('How many movies did you already watch?', '');
+
+let personalMovieDB = {
+	count: numberOfFilms,
+	movies: {},
+	actors: {},
+	genres: [],
+	privat: false
+};
 
 
-// console.log( 1 && 2 && 3 ); //3
+for (let i = 0; i < 2; i++) {
+    const a = prompt('Latest watched film?', ''),
+	      b = prompt('How would you rate it?', '');
 
+    if (a != null && b != null && a != '' && b != '' && a.length < 50) {
 
-// console.log( !1 && 2 || !3 ); //false
+        personalMovieDB.movies[a] = b;
+        console.log('done');
+    } else {
+        console.log('error');
+        i--;
+    }
+}
 
+// let i = 0;
+// while (i < 2) {
+//     const a = prompt('Latest watched film?', ''),
+// 	      b = prompt('How would you rate it?', '');
 
-// console.log( 25 || null && !3 ); //25
-
-
-// console.log( NaN || null || !3 || undefined || 5); //5
-
-
-// console.log( NaN || null && !3 && undefined || 5); //5
-
-
-// console.log( 5 === 5 && 3 > 1 || 5); //true
-
-
-// const hamburger = 3;
-// const fries = 3;
-// const cola = 0;
-// const nuggets = 2;
-
-
-// if (hamburger === 3 && cola || fries === 3 && nuggets) {
-//    console.log('Done!')
-// }
-
-
-// let hamburger;
-// const fries = NaN;
-// const cola = 0;
-// const nuggets = 2;
-
-
-// if (hamburger || cola || fries === 3 || nuggets) {
-//    console.log('Done!')
-// }
-
-// let hamburger;
-// const fries = NaN;
-// const cola = 0;
-// const nuggets = 2;
-
-
-// if (hamburger && cola || fries === 3 && nuggets) {
-//    console.log('Done!')
-// }
-
-// console.log(hamburger && cola || fries === 3 && nuggets);
-
-
-// for (let i = 0; i < 3; i++) {
-// 	console.log(i);
-// 	for (let j = 0; j < 3; j++) {
-// 		console.log(j);
-// 	}
-// }
-
-//make a triangle
-
-// let result = '';
-// const length = 7;
-
-// for (let i = 1; i < length; i++) {
-
-// 	for (let j = 0; j < i; j++) {
-	
-// 		result += '*';
-// 	}
-
-// 	result += '\n';
-// }
-
-// console.log(result);
-
-
-// // Место для первой задачи
-// function firstTask() {
-//     // Пишем решение вот тут
-//     for (let i = 5; i <=10; i++) {
-// 		console.log(i);
-// 	}
-    
-// }
-
-// // Место для второй задачи
-// function secondTask() {
-//     // Пишем решение вот тут
-//     for (let i = 20; i >=10; i--) {
-// 		if (i === 13) {
-// 			break;
-// 		}
-// 		console.log(i);
-// 	}
-    
-// }
-
-// // Место для третьей задачи
-// function thirdTask() {
-//     // Пишем решение вот тут
-//     for ( let i = 2; i <= 10; i++) {
-// 		if (i % 2 === 0) {
-// 			console.log(i);
-// 		}
-// 	}
-    
-// }
-
-// // Место для четвертой задачи
-
-// // Цикл, который нужно переписать:
-
-// // for (let i = 2; i <= 16; i++) {
-// //     if (i % 2 === 0) {
-// //         continue;
-// //     } else {
-// //         console.log(i);
-// //     }
-// // }
-
-// function fourthTask() {
-//     // Пишем решение вот тут
-    
-// 	let i = 2;
-// 	while (i <= 16) {
-// 		if (i % 2 !== 0) {
-// 			console.log(i);
-// 		}
-// 		i++;
-// 	}
-
-    
-// }
-
-// // Место для пятой задачи
-
-// function fifthTask() {
-//     const arrayOfNumbers = [];
-
-//     // Пишем решение вот тут
-    
-//     for (let i = 5; i <= 10; i++) {
-// 		arrayOfNumbers[arrayOfNumbers.length] = i;
-// 	}
-// 	console.log(arrayOfNumbers);
-
-//     // Не трогаем
-//     return arrayOfNumbers;
-// }
-
-
-
-// // Место для первой задачи
-// function firstTask() {
-//     // Значения массива менять нельзя, тут он проверяется автоматически именно на эти значения
-//     const arr = [3, 5, 8, 16, 20, 23, 50];
-//     const result = [];
-
-//     // Пишем решение вот тут
-//     for (let i = 0; i < arr.length; i++) {
-// 		result[i] = arr[i];
-// 	}
-// 	console.log(result);
-    
-//     // Не трогаем
-//     return result;
-// }
-
-// // Место для второй задачи
-// function secondTask() {
-//     // Значения массива менять нельзя, тут он проверяется автоматически именно на эти значения
-//     const data = [5, 10, 'Shopping', 20, 'Homework'];
-
-//     // Пишем решение вот тут
-    
-// 	for (let i = 0; i < data.length; i++) {
-// 		if (typeof(data[i]) === 'number') {
-// 			data[i] = data[i] * 2;
-// 		} else if (typeof(data[i]) === 'string') {
-// 			data[i] = `${data[i]} - done`;
-// 		}
-// 		console.log(data);
-// 	}
-    
-//     // Не трогаем
-//     return data;
-// }
-
-// // Место для третьей задачи
-// function thirdTask() {
-//     // Значения массива менять нельзя, тут он проверяется автоматически именно на эти значения
-//     const data = [5, 10, 'Shopping', 20, 'Homework'];
-//     const result = [];
-
-//     // Пишем решение вот тут
-    
-//     for (let i = 1; i <= data.length; i++) {
-//         result[i - 1] = data[data.length - i]
+//     if (a != null && b != null && a != '' && b != '' && a.length < 50) {
+//         personalMovieDB.movies[a] = b;
+//         console.log('done');
+//         i++;
+//     } else {
+//         console.log('error');
 //     }
-
-//     // //for (let i = 0; i <= data.length; i++) {
-//     //     result[i] = data[data.length - 1 - i]
-//     // }
-    
-// 	console.log(result);
-//     // Не трогаем
-//     return result;
 // }
 
+// let i = 0;
+// do {
+//     const a = prompt('Latest watched film?', ''),
+//           b = prompt('How would you rate it?', '');
 
-// //
-
-// another triangle
-// const lines = 5;
-// let result = '';
-
-// for (let i = 0; i <= lines; i++) {
-//     for (let j = 0; j < lines - i; j++) {
-//         result += " ";
+//     if (a != null && b != null && a !== '' && b !== '' && a.length < 50) {
+//         personalMovieDB.movies[a] = b;
+//         console.log('done');
+//         i++;
+//     } else {
+//         console.log('error');
 //     }
-//     for (let j = 0; j < 2 * i + 1; j++) {
-//         result += "*";
-//     }
-//     result += "\n";
-// }
-// console.log(result);
+// } while (i < 2);
 
-// trening of cycles
-
-
-// const lines = 5;
-// let result = '';
-
-// for (let i = 0; i <= lines; i++) {
-//     for (let j = 0; j < lines - i; j++) {            
-//     result += '*';
-//     }
-    
-//     result += "\n";
-// }
-// console.log(result);
-// *
-// **
-// ***
-// ****
-// *****
-// ******
-
-
-// const lines = 5;
-// let result = '';
-
-// for (let i = 1; i <= lines; i++) {
-//     for (let j = 0; j < i; j++) {
-//         result += '*';
-//     }
-//     result += '\n';
+// if (personalMovieDB.count < 10) {
+//     alert('Просмотрено мало фильмов');
+// } else if (personalMovieDB.count < 30 && personalMovieDB.count > 10) {
+//     alert('Вы классический зритель');
+// } else if (personalMovieDB.count > 30) {
+//     alert('Вы киноман');
+// } else {
+//     alert('Error');
 // }
 
-// for (let i = lines - 1; i >= 1; i--) {
-//     for (let j = 0; j < i; j++) {
-//         result += '*';
-//     }
-//     result += '\n';
-// }
-// console.log(result);
-// *
-// **
-// ***
-// ****
-// *****
-// ****
-// ***
-// **
-// *
-
-// const lines = 5;
-// let result = '';
-
-// for (let i = 1; i <= lines; i++) {
-//     for (let j = 0; j < i; j++) {
-//         result += i;
-//     }
-//     result += '\n';
-// }
-// console.log(result);
-// 1
-// 22
-// 333
-// 4444
-// 55555
+// console.log(personalMovieDB);
 
 
-// const lines = 5;
-// let result = '';
+// Место для первой задачи
+function sayHello(name) {
+    return "Hello, " + name;
+}
+sayHello('Artur');
 
-// for (let i = 1; i <= lines; i++) {
-//     for (let j = 0; j < lines - i; j++) {
-//         result += ' ';
-//     }
-//     for (let k = 0; k < i * 2 - 1; k++) {
-//         result += i;
-//     }
-//     result += '\n';
-// }
-// console.log(result);
-//     1
-//    222
-//   33333
-//  4444444
-// 555555555
+// Место для второй задачи
+function returnNeighboringNumbers(num) {
+    return console.log([num - 1, num, num + 1])
+}
+returnNeighboringNumbers(5);
 
-// const lines = 9;
-// let result = '';
+// Место для третьей задачи
+function getMathResult(num, count) {
+    let result = '';
+    if (typeof count != 'number' || count <= 0) {
+        return num
+    } else {
+        for (let i = 1; i <= count; i++) {
+            result += num * i;
+            if (i !== count) result += '---';
+        }
+        console.log(result);
+        return result
+    }
+}
 
-// for (let i = lines; i >= 1; i--) {
-//     for ( let j = 0; j < lines - i; j++) {
-//         result += ' ';
-//     }
-//     for (let k = 0; k <= 1 * i - 1; k++) {
-//         result += i;
-//     }
-//     result += '\n';
-// }
-// console.log(result);
-// 999999999
-//  88888888
-//   7777777
-//    666666
-//     55555
-//      4444
-//       333
-//        22
-//         1
+getMathResult(10, 4);
