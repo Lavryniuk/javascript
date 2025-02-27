@@ -64,30 +64,30 @@
 // Код возьмите из предыдущего домашнего задания
 
 
-const numberOfFilms = +prompt('How many movies did you already watch?', '');
+// const numberOfFilms = +prompt('How many movies did you already watch?', '');
 
-let personalMovieDB = {
-	count: numberOfFilms,
-	movies: {},
-	actors: {},
-	genres: [],
-	privat: false
-};
+// let personalMovieDB = {
+// 	count: numberOfFilms,
+// 	movies: {},
+// 	actors: {},
+// 	genres: [],
+// 	privat: false
+// };
 
 
-for (let i = 0; i < 2; i++) {
-    const a = prompt('Latest watched film?', ''),
-	      b = prompt('How would you rate it?', '');
+// for (let i = 0; i < 2; i++) {
+//     const a = prompt('Latest watched film?', ''),
+// 	      b = prompt('How would you rate it?', '');
 
-    if (a != null && b != null && a != '' && b != '' && a.length < 50) {
+//     if (a != null && b != null && a != '' && b != '' && a.length < 50) {
 
-        personalMovieDB.movies[a] = b;
-        console.log('done');
-    } else {
-        console.log('error');
-        i--;
-    }
-}
+//         personalMovieDB.movies[a] = b;
+//         console.log('done');
+//     } else {
+//         console.log('error');
+//         i--;
+//     }
+// }
 
 // let i = 0;
 // while (i < 2) {
@@ -130,31 +130,119 @@ for (let i = 0; i < 2; i++) {
 // console.log(personalMovieDB);
 
 
-// Место для первой задачи
-function sayHello(name) {
-    return "Hello, " + name;
-}
-sayHello('Artur');
+// // Место для первой задачи
+// function sayHello(name) {
+//     return "Hello, " + name;
+// }
+// sayHello('Artur');
 
-// Место для второй задачи
-function returnNeighboringNumbers(num) {
-    return console.log([num - 1, num, num + 1])
-}
-returnNeighboringNumbers(5);
+// // Место для второй задачи
+// function returnNeighboringNumbers(num) {
+//     return console.log([num - 1, num, num + 1])
+// }
+// returnNeighboringNumbers(5);
 
-// Место для третьей задачи
-function getMathResult(num, count) {
-    let result = '';
-    if (typeof count != 'number' || count <= 0) {
-        return num
-    } else {
-        for (let i = 1; i <= count; i++) {
-            result += num * i;
-            if (i !== count) result += '---';
-        }
-        console.log(result);
-        return result
+// // Место для третьей задачи
+// function getMathResult(num, count) {
+//     let result = '';
+//     if (typeof count != 'number' || count <= 0) {
+//         return num
+//     } else {
+//         for (let i = 1; i <= count; i++) {
+//             result += num * i;
+//             if (i !== count) result += '---';
+//         }
+//         console.log(result);
+//         return result
+//     }
+// }
+
+// getMathResult(10, 4);
+
+/* Задание на урок:
+
+1) Первую часть задания повторить по уроку
+
+2) Создать функцию showMyDB, которая будет проверять свойство privat. Если стоит в позиции
+false - выводит в консоль главный объект программы
+
+3) Создать функцию writeYourGenres в которой пользователь будет 3 раза отвечать на вопрос 
+"Ваш любимый жанр под номером ${номер по порядку}". Каждый ответ записывается в массив данных
+genres
+
+P.S. Функции вызывать не обязательно*/
+
+'use strict';
+
+// Код возьмите из предыдущего домашнего задания
+
+let numberOfFilms;
+
+function start () {
+    numberOfFilms = +prompt('How many movies did you already watch?', '');
+
+    while (numberOfFilms == '' || numberOfFilms == null || isNaN(numberOfFilms)) {
+        numberOfFilms = +prompt('How many movies did you already watch?', '');
     }
 }
 
-getMathResult(10, 4);
+start();
+
+let personalMovieDB = {
+	count: numberOfFilms,
+	movies: {},
+	actors: {},
+	genres: [],
+	privat: false
+};
+
+
+
+
+function rememberMyFilms() {
+    for (let i = 0; i < 2; i++) {
+        const a = prompt('Latest watched film?', '').trim(),
+              b = prompt('How would you rate it?', '').trim();
+    
+        if (a != null && b != null && a != '' && b != '' && a.length < 50) {
+    
+            personalMovieDB.movies[a] = b;
+            console.log('done');
+        } else {
+            console.log('error');
+            i--;
+        }
+    }
+}
+
+rememberMyFilms();
+
+function detectPersonalLevel() {
+    if (personalMovieDB.count < 10) {
+    alert('Просмотрено мало фильмов');
+    } else if (personalMovieDB.count < 30 && personalMovieDB.count >= 10) {
+        alert('Вы классический зритель');
+    } else if (personalMovieDB.count >= 30) {
+        alert('Вы киноман');
+    } else {
+        alert('Error');
+    }
+}
+
+detectPersonalLevel();
+
+function showMyDB(hidden) {
+    if (!hidden) {
+        console.log(personalMovieDB);
+    }
+}
+
+showMyDB();
+
+function writeYourGenres() {
+    for (let i = 1; i <= 3; i++) {
+        personalMovieDB.genres[i - 1] = prompt(`Ваш любимый жанр под номером ${i}`).trim();
+    }
+}
+
+writeYourGenres();

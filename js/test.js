@@ -362,15 +362,145 @@
 // convert(500, usdCurr);
 // convert(500, eurCurr);
 
-const usdCurr = 28;
-const discount = 0.9;
+// const usdCurr = 28;
+// const discount = 0.9;
 
-function convert(amount, curr) {
-    console.log("Start: " + (amount * curr));
-    return amount * curr;
-}
-function promotion( result) {
-    console.log("With discount: " + (result * discount));
-}
+// function convert(amount, curr) {
+//     console.log("Start: " + (amount * curr));
+//     return amount * curr;
+// }
+// function promotion( result) {
+//     console.log("With discount: " + (result * discount));
+// }
 
-promotion(convert(500, usdCurr));
+// promotion(convert(500, usdCurr));
+
+
+// calculator
+// function calc(firstInt, secondInt, operator) {
+//     if (typeof firstInt != 'number' || typeof secondInt != 'number') {
+//         return "Ошибка: аргументы должны быть числами";
+//     } 
+//     if (operator !== '+' && operator !== '-' && operator !== '*' && operator !== '/') {
+//         return "Ошибка: неизвестный оператор";
+//     }
+
+//     let result;
+//     switch (operator) {
+//         case '+':
+//             result = firstInt + secondInt;
+//             break;
+//         case '-':
+//             result = firstInt - secondInt;
+//             break;
+//         case '*':
+//             result = firstInt * secondInt;
+//             break;
+//         case '/':
+//             result = firstInt / secondInt;
+//             break;
+//     }
+//     return result;
+// }
+// console.log(calc(2, 7, '*'));
+
+
+// function calculateVolumeAndArea(edge) {
+//     if (typeof edge != 'number' || edge <= 0 || !Number.isInteger(edge)) {
+//         return "При вычислении произошла ошибка";
+//     }
+    
+//     let volume = edge * edge * edge;
+//     let surfaceArea = 6 * edge * edge;
+
+//     return `Объем куба: ${volume}, площадь всей поверхности: ${surfaceArea}`;
+// }
+
+// console.log(calculateVolumeAndArea(10));
+
+
+// function getCoupeNumber(seat) {
+//     if (typeof seat != 'number' || seat < 0 || !Number.isInteger(seat)) {
+//         return "Ошибка. Проверьте правильность введенного номера места";
+//     }
+//     if (seat === 0 || seat > 36) {
+//         return "Таких мест в вагоне не существует";
+//     }
+
+//     return `Ваше купе: номер ${Math.ceil(seat / 4)}`;
+// }
+
+// console.log(getCoupeNumber(30));
+
+// function getTimeFromMinutes(minutes) {
+//     if (typeof minutes != 'number' || minutes < 0 || !Number.isInteger(minutes)) {
+//         return "Ошибка, проверьте данные";
+//     }
+//     if (minutes === 0 || minutes > 600) {
+//         return "Ошибка, проверьте данные";
+//     }
+
+//     let hours = Math.floor(minutes / 60);
+//     let leftMinutes = minutes % 60;
+
+//     let hourStr = '';
+
+//     switch (hours) {
+//         case 0:
+//             hourStr = 'часов';
+//             break;
+//         case 1:
+//             hourStr = 'час';
+//             break;
+//         case 2:
+//         case 3:
+//         case 4:
+//             hourStr = 'часа';
+//             break;
+//         default:
+//             hourStr = 'часов';
+
+//     }
+//     return `Это ${hours} ${hourStr} и ${leftMinutes} минут`;
+// } 
+
+// console.log(getTimeFromMinutes(15));
+
+// function findMaxNumber (num1, num2, num3, num4) {
+//     if (arguments.length !== 4 ||
+//         typeof num1 != 'number' ||
+//         typeof num2 != 'number' ||
+//         typeof num3 != 'number' ||
+//         typeof num4 != 'number') {
+//             return 0;
+//         } else {
+//             return Math.max(num1, num2, num3, num4);
+//         }
+// }
+
+// console.log(findMaxNumber(3, 8, 2.1, "15"));
+
+
+// function fib(a) {
+//     if (typeof a != 'number' || a <= 0 || !Number.isInteger(a)) {
+//         return '';
+//     } 
+//     let result = '';
+//     let first = 0;
+//     let second = 1;
+
+//     for (let i = 0; i < a; i++) {
+//         if (i + 1 === a) {
+//             result += `${first}`;
+//         } else {
+//             result += `${first} `;
+//         }
+
+//         let third = first + second;
+//         first = second;
+//         second = third;
+//     }
+
+//     return result;
+// }
+// console.log(fib(15));
