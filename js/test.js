@@ -515,7 +515,7 @@
 //         bg: 'red'
 //     },
 //     makeTest: function() {
-//         console.log("Test")
+//         console.log("Test");
 //     }
 // };
 
@@ -542,3 +542,64 @@
 
 // console.log(counter);
 
+
+// const users = {
+//     count: 0,
+//     active: [],
+//     inactive: [],
+//     addUser(name, status) {
+//         if (status === 'active') {
+//             this.active.push(name);
+//         } else {
+//             this.inactive.push(name);
+//         }
+//         this.count++;
+//     },
+//     showUsers() {
+//         console.log(`Всего пользователей: ${this.count}`);
+//         console.log(`Активные: ${this.active.join(', ')}`);
+//         console.log(`Неактивные: ${this.inactive.join(', ')}`);
+//     }
+// };
+
+// users.addUser('Alice', 'active');
+// users.addUser('Mark', 'inactive');
+// users.addUser('Bob', 'active');
+// users.showUsers();
+
+
+const todoList = {
+    tasks: [],
+    addTask(task) {
+        this.tasks.push(task);
+        console.log(`Задача "${task}" добавлена.`);
+    },
+
+    removeTask(task) {
+        const index = this.tasks.indexOf(task);
+        if (index !== -1) {
+            this.tasks.splice(index, 1);
+            console.log(`Задача "${task}" удалена.`);
+        } else {
+            console.log(`Задача "${task}" не найдена`);
+        }
+    },
+
+    showTasks() {
+        if (this.tasks.length === 0) {
+            console.log(`Список задач пуст`);
+        } else {
+            console.log(`Ваши задачи:`);
+            this.tasks.forEach((task, index) => {
+                console.log(`${index + 1}. ${task}`);
+            });
+        }
+    }
+};
+
+todoList.addTask("Выучить JS");
+todoList.addTask("Сделать проект");
+todoList.showTasks();
+todoList.removeTask("Сделать проект");
+todoList.removeTask("Сделать проект"); //check
+todoList.showTasks();
