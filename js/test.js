@@ -568,38 +568,235 @@
 // users.showUsers();
 
 
-const todoList = {
-    tasks: [],
-    addTask(task) {
-        this.tasks.push(task);
-        console.log(`Задача "${task}" добавлена.`);
-    },
+// const todoList = {
+//     tasks: [],
+//     addTask(task) {
+//         this.tasks.push(task);
+//         console.log(`Задача "${task}" добавлена.`);
+//     },
 
-    removeTask(task) {
-        const index = this.tasks.indexOf(task);
-        if (index !== -1) {
-            this.tasks.splice(index, 1);
-            console.log(`Задача "${task}" удалена.`);
-        } else {
-            console.log(`Задача "${task}" не найдена`);
-        }
-    },
+//     removeTask(task) {
+//         const index = this.tasks.indexOf(task);
+//         if (index !== -1) {
+//             this.tasks.splice(index, 1);
+//             console.log(`Задача "${task}" удалена.`);
+//         } else {
+//             console.log(`Задача "${task}" не найдена`);
+//         }
+//     },
 
-    showTasks() {
-        if (this.tasks.length === 0) {
-            console.log(`Список задач пуст`);
-        } else {
-            console.log(`Ваши задачи:`);
-            this.tasks.forEach((task, index) => {
-                console.log(`${index + 1}. ${task}`);
-            });
-        }
-    }
-};
+//     showTasks() {
+//         if (this.tasks.length === 0) {
+//             console.log(`Список задач пуст`);
+//         } else {
+//             console.log(`Ваши задачи:`);
+//             this.tasks.forEach((task, index) => {
+//                 console.log(`${index + 1}. ${task}`);
+//             });
+//         }
+//     }
+// };
 
-todoList.addTask("Выучить JS");
-todoList.addTask("Сделать проект");
-todoList.showTasks();
-todoList.removeTask("Сделать проект");
-todoList.removeTask("Сделать проект"); //check
-todoList.showTasks();
+// todoList.addTask("Выучить JS");
+// todoList.addTask("Сделать проект");
+// todoList.showTasks();
+// todoList.removeTask("Сделать проект");
+// todoList.removeTask("Сделать проект"); //check
+// todoList.showTasks();
+
+// const personalPlanPeter = {
+//     name: "Peter",
+//     age: "29",
+//     skills: {
+//         languages: ['ru', 'eng'],
+//         programmingLangs: {
+//             js: '20%',
+//             php: '10%'
+//         },
+//         exp: '1 month'
+//     },
+//     showAgeAndLangs() {
+//         const { languages } = this.skills;
+//         return `Мне ${this.age} и я владею языками: ${languages.join(' ').toUpperCase()}`;
+//     }
+// };
+
+// console.log(personalPlanPeter.showAgeAndLangs());
+
+// function showExperience(plan) {
+//     const { exp } = plan.skills;
+//     return exp;
+// };
+
+// function showProgrammingLangs(plan) {
+//     const { programmingLangs} = plan.skills;
+    
+//     let result = '';
+
+//     for (let key in programmingLangs) {
+//         result += `Язык ${key} изучен на ${programmingLangs[key]}\n`;
+//     }
+//     return result;
+// };
+
+// const family = ['Peter', 'Ann', 'Alex', 'Linda'];
+
+// function showFamily(arr) {
+//     if (arr.length === 0) {
+//         return `Семья пуста`;
+//     }
+
+//     let result = arr.join(' ');
+
+//     return `Семья состоит из: ${result}`;
+// }
+
+// console.log(showFamily(family));
+
+// const favoriteCities = ['liSBon', 'ROME', 'miLan', 'Dublin'];
+
+// function standardizeStrings(arr) {
+//     arr.forEach(city => console.log(city.toLowerCase()));
+// }
+
+// standardizeStrings(favoriteCities);
+
+
+// const someString = 'This is some strange string';
+
+// function reverse(str) {
+//     if (typeof str !== 'string') {
+//         return "Ошибка!";
+//     }
+
+//     return str.split('').reverse().join('');
+// };
+
+// console.log(reverse(someString));
+
+// const baseCurrencies = ['USD', 'EUR'];
+// const additionalCurrencies = ['UAH', 'RUB', 'CNY'];
+
+// const allCurrencies = [...baseCurrencies, ...additionalCurrencies];
+
+// function availableCurr(arr, missingCurr) {
+//     if (arr.length === 0) {
+//         return "Нет доступных валют";
+//     }
+
+//     return `Доступные валюты:\n${arr.filter(curr => curr !== missingCurr).join('\n')}`.trimEnd();
+// }
+
+// console.log(availableCurr(allCurrencies, 'CNY'));
+
+
+// const shoppingMallData = {
+//     shops: [
+//         {
+//             width: 10,
+//             length: 5
+//         },
+//         {
+//             width: 15,
+//             length: 7
+//         },
+//         {
+//             width: 20,
+//             length: 5
+//         },
+//         {
+//             width: 8,
+//             length: 5
+//         }
+//     ],
+//     height: 5,
+//     moneyPer1m3: 30,
+//     budget: 50000
+// };
+
+// function isBudgetEnough(data) {
+
+//     let shopsArea = 0;
+
+//     data.shops.forEach(item => {
+//         shopsArea += item.width * item.length;
+//     });
+
+//     let needToPay = shopsArea * data.height * data.moneyPer1m3;
+
+//     return needToPay <= data.budget ? 'Бюджета достаточно' : 'Бюджета недостаточно';
+// };
+
+// console.log(isBudgetEnough(shoppingMallData));
+
+
+// const students = ['Peter', 'Andrew', 'Ann', 'Mark', 'Josh', 'Sandra', 'Cris', 'Bernard', 'Takesi', 'Sam'];
+
+// function sortStudentsByGroups(arr) {
+//     arr.sort();
+
+//     let arrGroup = [];
+
+//     for (let i = 0; i < 3; i++) {
+//         arrGroup.push(arr.splice(0, 3));
+//     };
+
+//     arrGroup.push(`Оставшиеся студенты: ${!arr.length ? `-` : arr.join(', ')}`);
+//     return arrGroup;
+// }
+
+// console.log(sortStudentsByGroups(students));
+
+
+// const restorantData = {
+//     menu: [
+//         {
+//             name: 'Salad Caesar',
+//             price: '14$'
+//         },
+//         {
+//             name: 'Pizza Diavola',
+//             price: '9$'
+//         },
+//         {
+//             name: 'Beefsteak',
+//             price: '17$'
+//         },
+//         {
+//             name: 'Napoleon',
+//             price: '7$'
+//         }
+//     ],
+//     waitors: [
+//         {name: 'Alice', age: 22}, {name: 'John', age: 24}
+//     ],
+//     averageLunchPrice: '20$',
+//     openNow: true
+// };
+
+// function isOpen(prop) {
+//     let answer = '';
+//     !prop ? answer = 'Закрыто' : answer = 'Открыто';
+
+//     return answer;
+// }
+
+// console.log(isOpen(restorantData.openNow));
+
+// function isAverageLunchPriceTrue(fDish, sDish, average) {
+
+//     let sum = (+fDish.price.slice(0, -1)) + (+sDish.price.slice(0, -1));
+
+//     return sum < +average.slice(0, -1) ? 'Цена ниже средней' : 'Цена выше средней';
+// }
+
+// console.log(isAverageLunchPriceTrue(restorantData.menu[3], restorantData.menu[1], restorantData.averageLunchPrice));
+
+// function transferWaitors(data) {
+//     const copy = Object.assign({}, data);
+
+//     copy.waitors = [{name: 'Mike', age: 32}];
+//     return copy;
+// }
+
+// console.log(transferWaitors(restorantData));
