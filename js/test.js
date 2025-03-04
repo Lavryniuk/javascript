@@ -800,3 +800,266 @@
 // }
 
 // console.log(transferWaitors(restorantData));
+
+//recursion
+
+// let students = {
+//     js: [{
+//         name: 'John',
+//         progress: 100
+//     }, {
+//         name: 'Artur',
+//         progress: 25
+//     }],
+
+//     html: {
+//         basic: [{
+//             name: 'Peter',
+//             progress: 20
+//         }, {
+//             name: 'Ann',
+//             progress: 18
+//         }],
+
+//         pro: [{
+//             name: 'Sam',
+//             progress: 10
+//         }],
+
+//         semi: {
+//             students: [{
+//                 name: 'Test',
+//                 progress: 100
+//             }]
+//         }
+//     }
+// };
+
+// function getTotalProgressByIteration(data) {
+//     let total = 0;
+//     let students = 0;
+
+//     for (let course of Object.values(data)) {
+//         if (Array.isArray(course)) {
+//             students += course.length;
+
+//             for (let i = 0; i < course.length; i++) {
+//                 total += course[i].progress;
+//             }
+//         } else {
+//             for (let subCourse of Object.values(course)) {
+//                 students += subCourse.length;
+
+//                 for (let i = 0; i < subCourse.length; i++) {
+//                     total += subCourse[i].progress;
+//                 }
+//             }
+//         }
+//     }
+
+//     return total / students;
+// }
+
+// console.log(getTotalProgressByIteration(students));
+
+
+// function getTotalProgressByRecursion(data) {
+//     if (Array.isArray(data)) {
+//         let total = 0;
+
+//         for (let i = 0; i < data.length; i++) {
+//             total += data[i].progress;
+//         }
+
+//         return [total, data.length];
+//     } else {
+//         let total = [0, 0];
+
+//         for (let subData of Object.values(data)) {
+//             const subDataArray = getTotalProgressByRecursion(subData);
+//             total[0] += subDataArray[0];
+//             total[1] += subDataArray[1];
+//         }
+
+//         return total;
+//     }
+// }
+
+// const result = getTotalProgressByRecursion(students);
+
+// console.log(result[0]/result[1]);
+
+
+// function factorial(n) {
+//     if (n === 1 || n <=0 ) {
+//         return 1;
+//     } else if (isNaN(n) || !Number.isInteger(n)) {
+//         return 'not a number';
+//     } else {
+//         return n * factorial(n - 1);
+//     }
+// };
+
+// console.log(factorial(3));
+
+function sumOfAllNumberBetween(n) {
+    if (typeof n != 'number' || n <= 0) {
+        return 0;
+    } if (n < 1) { 
+        return n;
+    } else {
+        return n + sumOfAllNumberBetween(n - 1);
+    }
+}
+
+console.log(sumOfAllNumberBetween(5.5));
+
+function fib(n) {
+    if (typeof n !== 'number' || n <= 0) {
+        return 'not a valid number';
+    } else if (n === 1) {
+        return 0;
+    } else if (n === 2) {
+        return 1;
+    }else {
+        return fib(n - 1) + fib(n - 2);
+    }
+}
+console.log(fib(3));
+
+function showNumbers(n) {
+    if (typeof n !== 'number' || n <=0) {
+        return 'not a valid number';
+    } else if (n === 1) {
+        return 1;
+    } else {
+        return `${showNumbers(n - 1)} ${n}`;
+    }
+}
+console.log(showNumbers(3));
+
+//recursion of string
+
+function counterA(n) {
+    if (typeof n !== 'string' || n.length == 0) {
+        return 0;
+    } 
+
+    let firstLetter = n[0] === 'a' ? 1 : 0;
+    return firstLetter + counterA(n.slice(1));
+}
+console.log(counterA("banan"))
+
+function reverseStr(n) {
+    if (typeof n !== 'string' || n.length === 0) {
+        return '';
+    } else {
+        return n[n.length -1] + reverseStr(n.slice(0, -1));
+    }
+}
+console.log(reverseStr("banana"))
+
+function isPalindrome(n) {
+    if (typeof n !== 'string' || n.length <= 1) {
+        return true;
+    } else if (n[0] !== n[n.length - 1]){
+        return false;
+    } else {
+        return isPalindrome(n.slice(1, -1));
+    }
+}
+console.log(isPalindrome('banab'))
+
+function replaceA(n) {
+    if (typeof n !== 'string' || n.length <= 1) {
+        return '';
+    } else {
+        let firstLetter = n[0] === 'a' ? '@' : n[0];
+        return firstLetter + replaceA(n.slice(1));
+    }
+}
+console.log(replaceA('banab'))
+
+function removeVovels(n) {
+    if (typeof n !== 'string' || n.length === 0) {
+        return '';
+    } else {
+        let vovels = 'aeiou';
+        let firstLetter = vovels.includes(n[0].toLowerCase()) ? '' : n[0];
+        return firstLetter + removeVovels(n.slice(1));
+    }
+}
+console.log(removeVovels('bAnab'))
+
+function replaceSpaces (n) {
+    if (typeof n !== 'string' || n.length === 0) {
+        return '';
+    }
+
+    let firstSymbol = n[0] === ' ' ? "_" : n[0];
+    return firstSymbol + replaceSpaces(n.slice(1))
+}
+console.log(replaceSpaces('b An   ab'))
+
+//recursion of array
+
+function sumArray(n) {
+    if (!Array.isArray(n) || n.length === 0) {
+        return 0;
+    }
+
+    return n[0] + sumArray(n.slice(1));
+}
+console.log(sumArray([3, 5, 2]))
+
+function containNumber (data, n) {
+    if (!Array.isArray(data) || data.length === 0) {
+        return false;
+    }
+
+    if (data[0] === n) {
+        return true;
+    }
+
+    return containNumber(data.slice(1), n);
+}
+console.log(containNumber([3, 5, 2], 5))
+
+function findMax(data) {
+    console.log(data);
+    if (!Array.isArray(data) || data.length === 0) {
+        return 0;
+    }
+    if (data.length === 1) {
+        return data[0];
+    }
+
+    let maxRest = findMax(data.slice(1));
+    return Math.max(data[0], maxRest);
+}
+console.log(findMax([3, 5, 2]))
+
+function reverseArray(data) {
+    console.log(data);
+    if (!Array.isArray(data) || data.length === 0) {
+        return [];
+    }
+    if (data.length === 1) {
+        return data;
+    }
+
+    return [data[data.length - 1], ...reverseArray(data.slice(0, -1))];
+}
+console.log(reverseArray([1, 2, 3, 4, 5]))
+
+function isPalindromeArray (data) {
+    if (!Array.isArray(data) || data.length <= 1) {
+        return true;
+    }
+    if (data[0] !== data[data.length - 1]) {
+        return false;
+    }
+
+    return isPalindromeArray(data.slice(1, - 1))
+}
+console.log(isPalindromeArray([1, 2, 3, 2, 1]))
