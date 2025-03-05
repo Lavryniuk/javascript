@@ -1063,3 +1063,27 @@ function isPalindromeArray (data) {
     return isPalindromeArray(data.slice(1, - 1))
 }
 console.log(isPalindromeArray([1, 2, 3, 2, 1]))
+
+
+//Date //if looking Date throuth browser-locate time/date, if terminal-UTC
+const now = new Date('2025-03-05');
+new Date.parse('2025-03-05');
+
+console.log(now.setHours(18));
+console.log(now);
+
+// console.log(now.getHours());
+// console.log(now.getUTCHours());
+
+// console.log(now.getTime());
+
+
+let start = new Date();
+
+for (let i = 0; i < 1000000000; i++) { //don't do more or u will break the system)
+    let some = i ** 3;
+}
+
+let end = new Date();
+
+console.log(`${end - start}`);
