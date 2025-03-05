@@ -902,175 +902,176 @@
 
 // console.log(factorial(3));
 
-function sumOfAllNumberBetween(n) {
-    if (typeof n != 'number' || n <= 0) {
-        return 0;
-    } if (n < 1) { 
-        return n;
-    } else {
-        return n + sumOfAllNumberBetween(n - 1);
-    }
-}
+// function sumOfAllNumberBetween(n) {
+//     if (typeof n != 'number' || n <= 0) {
+//         return 0;
+//     } if (n < 1) { 
+//         return n;
+//     } else {
+//         return n + sumOfAllNumberBetween(n - 1);
+//     }
+// }
 
-console.log(sumOfAllNumberBetween(5.5));
+// console.log(sumOfAllNumberBetween(5.5));
 
-function fib(n) {
-    if (typeof n !== 'number' || n <= 0) {
-        return 'not a valid number';
-    } else if (n === 1) {
-        return 0;
-    } else if (n === 2) {
-        return 1;
-    }else {
-        return fib(n - 1) + fib(n - 2);
-    }
-}
-console.log(fib(3));
+// function fib(n) {
+//     if (typeof n !== 'number' || n <= 0) {
+//         return 'not a valid number';
+//     } else if (n === 1) {
+//         return 0;
+//     } else if (n === 2) {
+//         return 1;
+//     }else {
+//         return fib(n - 1) + fib(n - 2);
+//     }
+// }
+// console.log(fib(3));
 
-function showNumbers(n) {
-    if (typeof n !== 'number' || n <=0) {
-        return 'not a valid number';
-    } else if (n === 1) {
-        return 1;
-    } else {
-        return `${showNumbers(n - 1)} ${n}`;
-    }
-}
-console.log(showNumbers(3));
+// function showNumbers(n) {
+//     if (typeof n !== 'number' || n <=0) {
+//         return 'not a valid number';
+//     } else if (n === 1) {
+//         return 1;
+//     } else {
+//         return `${showNumbers(n - 1)} ${n}`;
+//     }
+// }
+// console.log(showNumbers(3));
 
-//recursion of string
+// //recursion of string
 
-function counterA(n) {
-    if (typeof n !== 'string' || n.length == 0) {
-        return 0;
-    } 
+// function counterA(n) {
+//     if (typeof n !== 'string' || n.length == 0) {
+//         return 0;
+//     } 
 
-    let firstLetter = n[0] === 'a' ? 1 : 0;
-    return firstLetter + counterA(n.slice(1));
-}
-console.log(counterA("banan"))
+//     let firstLetter = n[0] === 'a' ? 1 : 0;
+//     return firstLetter + counterA(n.slice(1));
+// }
+// console.log(counterA("banan"))
 
-function reverseStr(n) {
-    if (typeof n !== 'string' || n.length === 0) {
-        return '';
-    } else {
-        return n[n.length -1] + reverseStr(n.slice(0, -1));
-    }
-}
-console.log(reverseStr("banana"))
+// function reverseStr(n) {
+//     if (typeof n !== 'string' || n.length === 0) {
+//         return '';
+//     } else {
+//         return n[n.length -1] + reverseStr(n.slice(0, -1));
+//     }
+// }
+// console.log(reverseStr("banana"))
 
-function isPalindrome(n) {
-    if (typeof n !== 'string' || n.length <= 1) {
-        return true;
-    } else if (n[0] !== n[n.length - 1]){
-        return false;
-    } else {
-        return isPalindrome(n.slice(1, -1));
-    }
-}
-console.log(isPalindrome('banab'))
+// function isPalindrome(n) {
+//     if (typeof n !== 'string' || n.length <= 1) {
+//         return true;
+//     } else if (n[0] !== n[n.length - 1]){
+//         return false;
+//     } else {
+//         return isPalindrome(n.slice(1, -1));
+//     }
+// }
+// console.log(isPalindrome('banab'))
 
-function replaceA(n) {
-    if (typeof n !== 'string' || n.length <= 1) {
-        return '';
-    } else {
-        let firstLetter = n[0] === 'a' ? '@' : n[0];
-        return firstLetter + replaceA(n.slice(1));
-    }
-}
-console.log(replaceA('banab'))
+// function replaceA(n) {
+//     if (typeof n !== 'string' || n.length <= 1) {
+//         return '';
+//     } else {
+//         let firstLetter = n[0] === 'a' ? '@' : n[0];
+//         return firstLetter + replaceA(n.slice(1));
+//     }
+// }
+// console.log(replaceA('banab'))
 
-function removeVovels(n) {
-    if (typeof n !== 'string' || n.length === 0) {
-        return '';
-    } else {
-        let vovels = 'aeiou';
-        let firstLetter = vovels.includes(n[0].toLowerCase()) ? '' : n[0];
-        return firstLetter + removeVovels(n.slice(1));
-    }
-}
-console.log(removeVovels('bAnab'))
+// function removeVovels(n) {
+//     if (typeof n !== 'string' || n.length === 0) {
+//         return '';
+//     } else {
+//         let vovels = 'aeiou';
+//         let firstLetter = vovels.includes(n[0].toLowerCase()) ? '' : n[0];
+//         return firstLetter + removeVovels(n.slice(1));
+//     }
+// }
+// console.log(removeVovels('bAnab'))
 
-function replaceSpaces (n) {
-    if (typeof n !== 'string' || n.length === 0) {
-        return '';
-    }
+// function replaceSpaces (n) {
+//     if (typeof n !== 'string' || n.length === 0) {
+//         return '';
+//     }
 
-    let firstSymbol = n[0] === ' ' ? "_" : n[0];
-    return firstSymbol + replaceSpaces(n.slice(1))
-}
-console.log(replaceSpaces('b An   ab'))
+//     let firstSymbol = n[0] === ' ' ? "_" : n[0];
+//     return firstSymbol + replaceSpaces(n.slice(1))
+// }
+// console.log(replaceSpaces('b An   ab'))
 
-//recursion of array
+// //recursion of array
 
-function sumArray(n) {
-    if (!Array.isArray(n) || n.length === 0) {
-        return 0;
-    }
+// function sumArray(n) {
+//     if (!Array.isArray(n) || n.length === 0) {
+//         return 0;
+//     }
 
-    return n[0] + sumArray(n.slice(1));
-}
-console.log(sumArray([3, 5, 2]))
+//     return n[0] + sumArray(n.slice(1));
+// }
+// console.log(sumArray([3, 5, 2]))
 
-function containNumber (data, n) {
-    if (!Array.isArray(data) || data.length === 0) {
-        return false;
-    }
+// function containNumber (data, n) {
+//     if (!Array.isArray(data) || data.length === 0) {
+//         return false;
+//     }
 
-    if (data[0] === n) {
-        return true;
-    }
+//     if (data[0] === n) {
+//         return true;
+//     }
 
-    return containNumber(data.slice(1), n);
-}
-console.log(containNumber([3, 5, 2], 5))
+//     return containNumber(data.slice(1), n);
+// }
+// console.log(containNumber([3, 5, 2], 5))
 
-function findMax(data) {
-    console.log(data);
-    if (!Array.isArray(data) || data.length === 0) {
-        return 0;
-    }
-    if (data.length === 1) {
-        return data[0];
-    }
+// function findMax(data) {
+//     console.log(data);
+//     if (!Array.isArray(data) || data.length === 0) {
+//         return 0;
+//     }
+//     if (data.length === 1) {
+//         return data[0];
+//     }
 
-    let maxRest = findMax(data.slice(1));
-    return Math.max(data[0], maxRest);
-}
-console.log(findMax([3, 5, 2]))
+//     let maxRest = findMax(data.slice(1));
+//     return Math.max(data[0], maxRest);
+// }
+// console.log(findMax([3, 5, 2]))
 
-function reverseArray(data) {
-    console.log(data);
-    if (!Array.isArray(data) || data.length === 0) {
-        return [];
-    }
-    if (data.length === 1) {
-        return data;
-    }
+// function reverseArray(data) {
+//     console.log(data);
+//     if (!Array.isArray(data) || data.length === 0) {
+//         return [];
+//     }
+//     if (data.length === 1) {
+//         return data;
+//     }
 
-    return [data[data.length - 1], ...reverseArray(data.slice(0, -1))];
-}
-console.log(reverseArray([1, 2, 3, 4, 5]))
+//     return [data[data.length - 1], ...reverseArray(data.slice(0, -1))];
+// }
+// console.log(reverseArray([1, 2, 3, 4, 5]))
 
-function isPalindromeArray (data) {
-    if (!Array.isArray(data) || data.length <= 1) {
-        return true;
-    }
-    if (data[0] !== data[data.length - 1]) {
-        return false;
-    }
+// function isPalindromeArray (data) {
+//     if (!Array.isArray(data) || data.length <= 1) {
+//         return true;
+//     }
+//     if (data[0] !== data[data.length - 1]) {
+//         return false;
+//     }
 
-    return isPalindromeArray(data.slice(1, - 1))
-}
-console.log(isPalindromeArray([1, 2, 3, 2, 1]))
+//     return isPalindromeArray(data.slice(1, - 1))
+// }
+// console.log(isPalindromeArray([1, 2, 3, 2, 1]))
 
 
 //Date //if looking Date throuth browser-locate time/date, if terminal-UTC
-const now = new Date('2025-03-05');
-new Date.parse('2025-03-05');
 
-console.log(now.setHours(18));
-console.log(now);
+// const now = new Date('2025-03-05');
+// Date.parse('2025-03-05');
+
+// console.log(now.setHours(18));
+// console.log(now);
 
 // console.log(now.getHours());
 // console.log(now.getUTCHours());
@@ -1078,12 +1079,134 @@ console.log(now);
 // console.log(now.getTime());
 
 
-let start = new Date();
+// let start = new Date();
 
-for (let i = 0; i < 1000000000; i++) { //don't do more or u will break the system)
-    let some = i ** 3;
-}
+// for (let i = 0; i < 100000; i++) { //don't do more or u will break the system)
+//     let some = i ** 3;
+// }
 
-let end = new Date();
+// let end = new Date();
 
-console.log(`${end - start}`);
+// console.log(`${end - start}`);
+
+//Class
+
+// class Rectangle {
+//     constructor(height, width) {
+//         this.height = height;
+//         this.width = width;
+//     }
+
+//     calcArea() {
+//         return this.height * this. width;
+//     }
+// }
+
+// class ColoredRectangleWithText extends Rectangle { //extends all properties of Rectangle class including methods
+//     constructor(height, width, text, bgColor) {
+//         super(height, width); //paste properties u need of Rectangle class
+//         this.text = text;
+//         this.bgColor = bgColor;
+//     }
+
+//     showMyProps() {
+//         console.log(`${this.text}, ${this.bgColor}`);
+//     }
+// }
+
+// const div = new Rectangle(10, 8);
+// console.log(div.calcArea());
+
+// const div1 = new ColoredRectangleWithText(10, 10, 'Hello world', 'red');
+// div1.showMyProps()
+// console.log(div1.calcArea());
+
+//this
+
+// function showThis(a, b) {
+//     console.log(this);
+//     function sum() {
+//         console.log(this);
+//         return a + b;
+//     }
+
+//     console.log(sum());
+// }
+// showThis(4, 5);
+
+
+//1) Usual function: 'this' = 'window', but with 'use strict' - 'undefined'
+
+// const obj = {
+//     a:20,
+//     b:15,
+//     sum: function() {
+//         console.log(this);
+//     }
+// }
+
+// obj.sum();
+
+//2) The context of the call of an object is the object itself
+
+// function User(name, age) {
+//     this.name = name;
+//     this.age = age;
+//     this.human = true;
+// }
+// let artur = new User('Artur', 27);
+
+//3) In constructors and classes, `this` refers to the new object being created.
+ 
+// function sayName(surname) {
+//     console.log(this);
+//     console.log(this.name + surname);
+// }
+
+// const user = {
+//     name: 'John'
+// }
+
+// sayName.call(user, 'Smith');
+// sayName.apply(user, ['Smith']);
+
+// function count(num) {
+//     return this*num;
+// }
+
+// const double = count.bind(2);
+// console.log(double(13));
+
+//4) Manual binding 'this' by 'call', 'apply', 'bind'
+
+const btn = document.querySelector('button');
+
+btn.addEventListener('click', function() {
+    console.log(this);
+})
+
+const obj = {
+    num: 5,
+    sayNumber: function() {
+        const say = () => {
+            console.log(this);
+        }
+
+        say();
+    }
+};
+
+obj.sayNumber();
+
+const double = (a) => {
+    return a * 2;
+};
+
+//the same as
+
+const double1 = a => a * 2;
+
+console.log(double(4));
+console.log(double1(4));
+
+//5)
